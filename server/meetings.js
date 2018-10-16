@@ -1,12 +1,12 @@
-const meetingsRouter = require('express').router();
+const meetingsRouter = require('express').Router();
 
 module.exports = meetingsRouter;
 
 const {
   getAllFromDatabase,
   addToDatabase,
-  deleteFromDatabasebyId,
-  updateInstanceInDatabase,
+  deleteAllFromDatabase,
+  createMeeting,
 } = require ('./db');
 
 

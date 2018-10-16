@@ -36,16 +36,16 @@ ideasRouter.post('/', checkMillionDollarIdea, (req, res, next) => {
   res.status(201).send(newIdea);
 });
 
-ideasRouter.put('/:ideaId', checkMillionDollarIdea, (req, res, next) => {
-  const updatedIdea = updateInstanceInDatabase('ideas', req.body);
-  res.send(updatedIdea);
+ideasRouter.put('/:id', checkMillionDollarIdea, (req, res, next) => {
+  let updatedInstance = updateInstanceInDatabase('ideas', req.body);
+  res.send(updatedInstance);
 });
 
-ideasRouter.delete('/:ideaId', (req, res, next) => {
-  const deleteId = deleteFromDatabasebyId('ideas', req.params.id);
-  if (deleteid) {
+ideasRouter.delete('/:id', (req, res, next) => {
+  const deleted = deleteFromDatabasebyId('ideas', req.params.id);
+  if (deleted) {
     res.status(204);
   } else {
     res.status(500);
-  } res.send;
+  } res.send();
 });
